@@ -12,8 +12,18 @@ pipeline {
     }
     stage("checkout from SCM"){
         steps {
-        git branch: 'main' , credentials: 'github' ,url: ''
+        git branch: 'main' , credentials: 'github' ,url: 'https://github.com/Rameshmulakala/project_1.git'
         }
+    }
+    stage ("Built Application"){
+      steps{
+        sh "mvn clean packaga"
+      }
+    }
+    stage ("Test Application"){
+      steps{
+        sh "mvn test"
+      }
     }
   }
 }
