@@ -1,5 +1,5 @@
 pipeline {
-  agent { label 'Jenkins_agent }
+  agent { label 'Jenkins_agent' }
   tools {
     jdk 'Java21'
     maven 'Maven3'
@@ -17,7 +17,7 @@ pipeline {
     }
     stage ("Built Application"){
       steps{
-        sh "mvn clean packaga"
+        sh "mvn clean package"
       }
     }
     stage ("Test Application"){
